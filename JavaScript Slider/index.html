@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+<style>
+#container{ width: 650px;height:400px;
+ margin:20px auto; position: relative;
+}
+
+#img{ width: 650px;height: 400px; position: absolute;}
+
+#left_holder{ width:100px; height:450px; position: absolute; left: 0px; top: 0px; }
+
+
+#right_holder{ width:100px; height:450px; position: absolute; right: 0px; top: 0px; }
+
+.left{ height: 50px; width: 50px; position: absolute; top: 40%;left: 0px;}
+
+.right{  height: 50px; width: 50px; position: absolute; top:40%; right:0px;}
+
+</style> 
+</head>
+
+<body>
+<div id="container"> 
+<img src="images/img1.jpg" id="img"/> 
+
+<div id="left_holder"> <img onclick="slide(1)" src="images/arrow_left.png" class="left">   </div>
+
+<div id="right_holder"> <img onclick="slide(-1)" src="images/arrow_right.png" class="right"> </div>
+</div>
+  
+  
+  <script> 
+var imagecount =1;
+
+var total=5;  
+
+function slide(x){
+var Image = document.getElementById("img");
+
+imagecount =imagecount + x;
+if(imagecount > total){ imagecount =1;
+}
+
+if(imagecount < 1) {imagecount = total;}
+
+Image.src="images/img"+imagecount+".jpg";
+
+}
+
+
+  </script>
+  
+</body>
+</html>
